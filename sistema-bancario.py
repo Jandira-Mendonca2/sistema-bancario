@@ -9,20 +9,16 @@ limite=500
 extrato=""
 numero_saques=0
 limite_saques=3
-#d=valor
 while True:
     opcao=input(menu)
     if opcao=='1':
-        #print("Deposita")
         d=float(input("Valor depositado: "))
         if d>0:
             saldo += d
             extrato += f"Depósito R$ {d:.2f}\n"
-        #print(d)
         else:
             print("Operação falhou! O valor depositado é inválido.")
     elif opcao=='2':
-        #print("Saque")
         d=float(input("Valor do saque: "))
         excedeu_saldo=d>saldo
         excedeu_limite=d>limite
@@ -40,7 +36,6 @@ while True:
         else:
             print("Operação falhou! O valor informado é inválido.") 
     elif opcao=='3':
-        #print("Extrato")
         print("----------Extrato----------")
         print("Não foram realizadas movimentações."if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
@@ -49,3 +44,4 @@ while True:
         break
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada!")
+        
